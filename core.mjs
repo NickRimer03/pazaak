@@ -13,7 +13,11 @@ Client.on("ready", () => {
 Client.on("message", message => {
   const { author, channel, content } = message;
 
-  if (channel.id != 543410962473025556 || author.bot || !content.startsWith(Config.prefix)) {
+  if (
+    channel.id != 543410962473025556 ||
+    author.bot ||
+    !content.startsWith(Config.prefix)
+  ) {
     return;
   }
 
@@ -30,11 +34,25 @@ Client.on("message", message => {
       });
       break;
     case "play":
-      author.send(
-        `Your cards ${[...new Array(4)].map(() => {
-          return pazaak.sideDeck[utils.getRandom(pazaak.sideDeck.length - 1)];
-        })}`
-      );
+      // SEND CARDS TO AUTHOR IN PRIVATE MESSAGE
+      // author.send(
+      //   `Your cards ${[...new Array(4)].map(() => {
+      //     return pazaak.sideDeck[utils.getRandom(pazaak.sideDeck.length - 1)];
+      //   })}`
+      // );
+
+      // CREATE NEW CHANNEL AND ROLE
+      // message.guild.createRole({ name: "test_role" }).then(role => {
+      //   console.log(`--- role \`${role.name}\` created`);
+      //   message.guild
+      //     .createChannel("test_channel", "text", [
+      //       { id: message.guild.id, denied: ["VIEW_CHANNEL"] },
+      //       { id: role.id, allowed: ["ADMINISTRATOR"] }
+      //     ])
+      //     .then(channel => {
+      //       console.log(`--- channel \`${channel.name}\` created`);
+      //     });
+      // });
       break;
   }
 });

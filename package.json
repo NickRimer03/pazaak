@@ -20,5 +20,8 @@
   "homepage": "https://github.com/NickRimer03/pazaak#readme",
   "dependencies": {
     "discord.js": "^11.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0"
   }
 }
