@@ -1,0 +1,24 @@
+{
+  "name": "pazaak",
+  "version": "1.0.0",
+  "description": "Simply discord bot to play pazaak game like in old republic times",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-modules core.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickRimer03/pazaak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickRimer03/pazaak/issues"
+  },
+  "homepage": "https://github.com/NickRimer03/pazaak#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
