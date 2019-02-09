@@ -1,6 +1,6 @@
 import Discord from "discord.js";
 import Config from "./config.json";
-import Pazaak from "./src/game.mjs";
+import Pazaak from "./src/pazaak.mjs";
 import utils from "./src/utils.mjs";
 
 const Client = new Discord.Client();
@@ -33,11 +33,28 @@ Client.on("message", message => {
         console.log("-- cleaned --");
       });
       break;
+
+    case "list":
+      channel.send(pazaak.listGames());
+      break;
+
+    case "new":
+      channel.send(pazaak.newGame({ id: author.id, name: author.username }));
+      break;
+
+    case "join":
+      channel.send(pazaak.joinGame({ playerId: args[0], joinId: author.id }));
+      break;
+
+    case "exit":
+      channel.send(pazaak.exitGame(author.id));
+      break;
+
     case "play":
       // SEND CARDS TO AUTHOR IN PRIVATE MESSAGE
       // author.send(
       //   `Your cards ${[...new Array(4)].map(() => {
-      //     return pazaak.sideDeck[utils.getRandom(pazaak.sideDeck.length - 1)];
+      //     return pazaak.allSideDeckCards[utils.getRandom(pazaak.allSideDeckCards.length - 1)];
       //   })}`
       // );
 
