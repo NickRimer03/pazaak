@@ -13,11 +13,7 @@ Client.on("ready", () => {
 Client.on("message", message => {
   const { author, channel, content } = message;
 
-  if (
-    channel.id != 543410962473025556 ||
-    author.bot ||
-    !content.startsWith(Config.prefix)
-  ) {
+  if (channel.id != 543410962473025556 || author.bot || !content.startsWith(Config.prefix)) {
     return;
   }
 
